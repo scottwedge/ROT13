@@ -36,6 +36,24 @@ def encode(text, up, low):
             result = result + j  # Non alphabet character remains as is
     return result
 
+def decode(text, up, low):
+    result = ""
+    for j in text:
+        print("DEBUG____j=", j)
+        if j in up:
+            indx = up.index(j)  # find index for letter
+            indx -= 13  # Offset it
+            indx = indx % len(up)  # Wrap around end of alphabet if needed
+            result = result + up[indx]  # Add character
+        elif j in low:
+            indx = low.index(j)  # find index for letter
+            indx -= 13  # Offset it
+            indx = indx % len(low)  # Wrap around end of alphabet if needed
+            result = result + low[indx]  # Add character
+        else:
+            result = result + j  # Non alphabet character remains as is
+    return result
+
 def main():
     upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lower_alphabet = "abcdefghijklmnopqrstuvwxyz"
