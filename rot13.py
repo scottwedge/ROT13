@@ -5,8 +5,12 @@
 # Cryptography is fun
 # Pelcgbtencul vf sha
 
-# Tests
+# Constants:
+up = upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+low = lower_alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+
+# Tests
 def test_encode():
     assert encode("Cryptography is fun", up, low) == "Pelcgbtencul vf sha"
 
@@ -14,7 +18,6 @@ def test_decode():
     assert decode("Pelcgbtencul vf sha", up, low) == "Cryptography is fun"
 
 # Functions:
-
 def encode(text, up, low):
     result = ""
     for j in text:
