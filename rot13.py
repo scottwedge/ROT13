@@ -21,7 +21,6 @@ def test_decode():
 def encode(text, up, low):
     result = ""
     for j in text:
-        print("DEBUG____j=", j)
         if j in up:
             indx = up.index(j)  # find index for letter
             indx += 13  # Offset it
@@ -39,7 +38,6 @@ def encode(text, up, low):
 def decode(text, up, low):
     result = ""
     for j in text:
-        print("DEBUG____j=", j)
         if j in up:
             indx = up.index(j)  # find index for letter
             indx -= 13  # Offset it
@@ -55,12 +53,16 @@ def decode(text, up, low):
     return result
 
 def main():
+    text1 = "Cryptography is fun"
+    text2 = "Pelcgbtencul vf sha"
     upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lower_alphabet = "abcdefghijklmnopqrstuvwxyz"
     
-    text = "Cryptography is fun"
-    res = encode(text, upper_alphabet, lower_alphabet)
-    print(res)
+    res = encode(text1, upper_alphabet, lower_alphabet)
+    print("Result '{}' should equal '{}'.".format(res, text2))
+    
+    res = decode(text2, upper_alphabet, lower_alphabet)
+    print("Result '{}' should equal '{}'.".format(res, text1))
 
 if __name__ == "__main__":
     main()
