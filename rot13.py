@@ -58,11 +58,11 @@ def main():
     upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lower_alphabet = "abcdefghijklmnopqrstuvwxyz"
     
-    res = encode(text1, upper_alphabet, lower_alphabet)
-    print("Result '{}' should equal '{}'.".format(res, text2))
+    res1 = encode(text1, upper_alphabet, lower_alphabet)
+    print("Encoding '{}' creates '{}' which should equal '{}'.".format(text1, res1, text2))
     
-    res = decode(text2, upper_alphabet, lower_alphabet)
-    print("Result '{}' should equal '{}'.".format(res, text1))
+    res2 = decode(text2, upper_alphabet, lower_alphabet)
+    print("Decoding '{} creates '{}' which should equal '{}'.".format(text2, res2, text1))
 
 if __name__ == "__main__":
     main()
